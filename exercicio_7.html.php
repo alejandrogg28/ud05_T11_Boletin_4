@@ -7,6 +7,12 @@
     <title>ejercicio7</title>
 </head>
 <body>
+
+    <?php 
+        $combinacionSecreta = "1111";
+
+        if ((isset($_POST['intentos']) && intval($_POST['intentos'])< 4) || !isset($_POST['intentos'])) {?>
+    <!-- Pintamos el formulario si $_POST['intentos'] no existe, o existe y tiene valor menor q 4-->
     <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
     <input type="hidden" name="intentos" value="
         <?php 
@@ -19,11 +25,9 @@
     <label for="combinacion">Combinación</label>
     <input type="number" name="combinacion"><br>
     <input type="submit" name="Enviar">
-    <?php 
-        $combinacionSecreta = "1111";
+    </form>
 
-        if (isset($_POST['intentos']) && intval($_POST['intentos']< 4)) {
-            
+        <?php            
             if (isset($_POST['combinacion']) && filter_var($_POST['combinacion'], FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/[0-9]{4}/")))) {
                 if ($_POST['combinacion']==$combinacionSecreta) {
                     echo "<p>La caja fuerte se ha abierto satisfactoriamente</p>";
@@ -33,12 +37,13 @@
             }else{
                 echo "<p>Introduce un número de catro díxitos.</p>";
             }
-        }elseif (isset($_POST['intentos'])) {
+        }else if (isset($_POST['intentos'])) {
             echo "<p>Ha superado el número de intentos</p>";
         }
+    
 
     ?>
-    </form>
+    
 
 </body>
 </html>
