@@ -27,11 +27,7 @@ enteros a partir de uno que se introduce por teclado.-->
             for ($i=0; $i <= 5; $i++) { 
                 echo "<tr>"."<th>".$_POST['numero']."Cuadrado".pow($_POST['numero'],2)."</th>"."</tr>";
                 echo "<tr>"."<th>".$_POST['numero']."Cubo".pow($_POST['numero'],3)."</th>"."</tr>";
-                //echo "<p>El cubo de los 5 primeros números son: ".pow($_POST['numero'],3)."</p>";
                 $_POST['numero']++;
-                
-                //pow($_POST['numero'],2)
-                //echo "<tr>"."<th>".$_POST['numero']." * ". $i."</th>"."<th>".$_POST['numero'] * $i."</th>"."</tr>";
             }
         }else {
             echo "<p>Tienes que introducir un número.</p>";
