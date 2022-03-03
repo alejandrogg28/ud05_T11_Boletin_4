@@ -45,6 +45,8 @@ son negativos.-->
                 }else {
                     $_SESSION['positivos']++;
                 }
+            }else {
+                echo "Tienes que introducir un número";
             }
         }else {
             $positivos=$_SESSION['positivos'];
