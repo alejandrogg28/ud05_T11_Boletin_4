@@ -37,15 +37,8 @@ y que calcule la potencia.-->
               }
             }
 
-            if ($exponente < 0) {
-              for ($i = 0; $i < -$exponente; $i++) {
-                $potencia *= $base;
-              }
-
-              $potencia = 1 / $potencia;
-            }
-
             echo "$base<sup>$exponente</sup> = $potencia";
+            
           }else {
               echo "<p>Tienes que introducir un número</p>";
           }
