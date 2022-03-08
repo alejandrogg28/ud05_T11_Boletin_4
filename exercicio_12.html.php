@@ -7,6 +7,14 @@
     <title>Ejercicio 12 Boletín 4</title>
 </head>
 <body>
+
+    <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
+        <label for="numero">Introduce un número</label>
+        <input type="number" name="numero"/>
+        <br/>
+        <input type="submit" name="Calcular"/>
+    </form>
+
     <?php
     
         $num=$_POST['numero'];
@@ -17,12 +25,10 @@
     
         for ($i=2; $i < $num ; $i++) { 
             $fibActual = $fibCero + $fibUno;
-            echo "$fibActual <br>";
+            echo "$fibActual </br>";
             $fibCero=$fibUno;
             $fibUno=$fibActual;
         }
-
-
 
     ?>
     

@@ -36,7 +36,9 @@ enteros a partir de uno que se introduce por teclado.-->
 
                 $_POST['numero']++;
                 echo "</tr>";
+
             }
+            
             echo "</table>";
 
         }else {
