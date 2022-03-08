@@ -11,11 +11,14 @@
 y que calcule la potencia.-->    
 
     <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
+
         <label for="base">Introduce una base</label>
         <input type="number" name="base"/>
+
         <label for="exponente">Introduce una exponente</label>
         <input type="number" name="exponente"/>
         <br/>
+        
         <input type="submit" name="Calcular"/>
     </form>
 
@@ -28,17 +31,17 @@ y que calcule la potencia.-->
             $potencia = 1;
 
             if ($exponente == 0) {
-              $potencia = 1;
+                $potencia = 1;
             }
 
             if ($exponente > 0) {
-              for ($i = 0; $i < $exponente; $i++) {
-                $potencia *= $base;
-              }
+                for ($i = 0; $i < $exponente; $i++) {
+                    $potencia *= $base;
+                }
             }
 
             echo "$base<sup>$exponente</sup> = $potencia";
-            
+
           }else {
               echo "<p>Tienes que introducir un número</p>";
           }
