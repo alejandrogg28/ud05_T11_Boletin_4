@@ -8,27 +8,39 @@
 </head>
 <body>
 
+    <?php
+        $numero=$_POST['numero'];
+    
+        if(!isset($numero)){
+    ?>
+
     <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
         <label for="numero">Introduce un número</label>
         <input type="number" name="numero"/>
         <br/>
         <input type="submit" name="Calcular"/>
-    </form>
+    </form>        
 
     <?php
-    
-        $num=$_POST['numero'];
-        $fibCero=0;
-        $fibUno=1;
-        echo "$fibCero <br>";
-        echo "$fibUno <br>";
-    
-        for ($i=2; $i < $num ; $i++) { 
-            $fibActual = $fibCero + $fibUno;
-            echo "$fibActual </br>";
-            $fibCero=$fibUno;
-            $fibUno=$fibActual;
+        }else{
+            
+            $fibCero = 0;
+            $fibUno = 1;
+            echo "<p>$fibCero</p>";
+            echo "<p>$fibUno</p>";
+
+            while ($numero > 2) {
+
+                $fibActual = $fibCero;
+                $fibCero = $fibUno;
+                $fibUno = $fibActual + $fibUno;
+                echo "<p>$fibUno</p>";
+                $numero--;
+
+            }
+
         }
+
 
     ?>
     
