@@ -46,6 +46,8 @@ y que calcule la potencia.-->
             }
 
             echo "$base<sup>$exponente</sup> = $potencia";
+          }else {
+              echo "<p>Tienes que introducir un número</p>";
           }
 
         
