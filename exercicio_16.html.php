@@ -10,23 +10,30 @@
 <!--Escribe un programa que diga si un número introducido por teclado es o no primo. Un número
 primo es aquel que sólo es divisible entre él mismo y la unidad.-->    
 
-    <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
 
-    <label for="base">Introduce un número</label>
+    <label for="numero">Introduce un número</label>
     <input type="number" name="numero"/>
     <br/>
 
-    <input type="submit" name="Calcular"/>
+    <input type="submit" value="Calcular"/>
     </form>
 
     <?php
-        if(isset($_POST['numero'])){
-            $esPrimo=false;
-            for ($i=0; $i < 0; $i++) { 
-                if($_POST['numero'] % $_POST['numero'] == 0){
-                    echo "<p>No es primo</p>";
+    $numero = $_POST['numero'];
+        if(isset($numero)){
+            
+                $esPrimo = true; 
+                for ($dividido = 2; $dividido < $numero; $dividido++) { 
+                    if ($n % $dividido == 0) {
+                        $esPrimo = false;
+                    }
                 }
-            }
+                if ($esPrimo) {
+                    echo "<p>El numero es primo</p>";
+                }
+           
+            
         }else {
             echo "<p>Tienes que introducir un número</p>";
         }
