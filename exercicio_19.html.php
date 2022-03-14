@@ -51,6 +51,15 @@
             }
         }
 
+        function pintarPiramide($a,$i){
+            $linea="";
+            for ($indice=0; $i <$indice; $indice++) { 
+                $indice=$indice."<img src='img/$i'height='24px'>";
+                echo $indice."</br>";
+            
+            }
+        }
+
             ?>
 
         
