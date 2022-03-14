@@ -22,7 +22,7 @@
                 echo "<p>*$errores[$i]</p>";
             }
         }else {
-            
+            pintarPiramide();
         }
 
         function validarFormulario($a,$i){
@@ -42,9 +42,18 @@
 
             return $errores;
         }
+
         function pintarFormulario($altura,$icono){
+            $linea="";
+            for ($linea=0; $linea <$a; $linea++) { 
+                $linea=$linea."<img src='img/$i'height='20px'>";
+                echo $linea."</br>";
+            }
+        }
 
             ?>
+
+        
 
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
         <label for="altura">Altura da pirámide</label>
@@ -58,8 +67,9 @@
         </select>
     </form>
 
-            <?php
-        }
+    <?php
+
+        
     ?>
 
 
