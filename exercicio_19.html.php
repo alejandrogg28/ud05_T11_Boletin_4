@@ -22,7 +22,8 @@
                 echo "<p>*$errores[$i]</p>";
             }
         }else {
-            pintarPiramide();
+            pintarFormulario();
+            pintarPiramide($altura, $icono);
         }
 
         function validarFormulario($a,$i){
@@ -43,19 +44,29 @@
             return $errores;
         }
 
-        function pintarFormulario($altura,$icono){
-            $linea="";
-            for ($linea=0; $linea <$a; $linea++) { 
-                $linea=$linea."<img src='img/$i'height='20px'>";
-                echo $linea."</br>";
-            }
+        function pintarFormulario(){
+        ?>    
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+            <label for="altura">Altura da pirámide</label>
+            <input type="number" name="altura"/>
+            <select name="icono">
+                <option value="bolita.jfif">Bolita</option>
+                <option value="instagram.jfif">Instagram</option>
+                <option value="ladrillo.jfif">Ladrillo</option>
+                <option value="messenger.jfif">messenger</option>
+                <option value="twitter.jfif">Twitter</option>
+            </select>
+            <input type ="submit" value="Crear"/>
+        </form>
+
+        <?php
         }
 
         function pintarPiramide($a,$i){
             $linea="";
-            for ($indice=0; $i <$indice; $indice++) { 
-                $indice=$indice."<img src='img/$i'height='24px'>";
-                echo $indice."</br>";
+            for ($indice=0; $indice <$a; $indice++) { 
+                $linea=$linea."<img src='img/$i' height='24px'>";
+                echo $linea."</br>";
             
             }
         }
@@ -63,25 +74,6 @@
             ?>
 
         
-
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-        <label for="altura">Altura da pirámide</label>
-        <input type="number" name="altura"/>
-        <select>
-            <option value="bolita.jfif">Bolita</option>
-            <option value="instagram.jfif">Instagram</option>
-            <option value="ladrillo.jfif">Ladrillo</option>
-            <option value="messenger.jfif">messenger</option>
-            <option value="twitter.jfif">Twitter</option>
-        </select>
-    </form>
-
-    <?php
-
-        
-    ?>
-
-
 
 </body>
 </html>
